@@ -30,7 +30,6 @@ public class ProductJdbcDAO implements ProductDAO {
 
     }
    
-    
 
     @Override
     public void saveProduct(Product aProduct) {

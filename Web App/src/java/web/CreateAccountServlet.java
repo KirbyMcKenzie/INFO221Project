@@ -32,15 +32,28 @@ public class CreateAccountServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+         String username = request.getParameter("username");
+         String name = request.getParameter("name");
+         String email = request.getParameter("email");
+         String address = request.getParameter("address");
+         String password = request.getParameter("password");
+         
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet CreateAccountServlet</title>");            
+            out.println("<head>");        
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet CreateAccountServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>CreateAccountServlet </h1>");
+            out.println("<br>" + username + "<br>");
+            out.println(name + "<br>"); 
+            out.println(email + "<br>"); 
+            out.println(address + "<br>");
+            out.println(password + "<br>"); 
+            
             out.println("</body>");
             out.println("</html>");
         }

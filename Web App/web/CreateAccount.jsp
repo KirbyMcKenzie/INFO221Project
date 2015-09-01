@@ -16,7 +16,7 @@
     </body>
 
 
-    <form action="/CreateAccountServlet" method="post">
+    <form action="CreateAccountServlet" method="post">
         <fieldset>
 
             <legend>Enter your details to register</legend>
@@ -28,15 +28,13 @@
             <label for="txtName">Name:</label> <br> 
             <input id="txtName" name="name" type="text"> <br> 
 
-            <label for="txtEmal">Email:</label> <br> 
+            <label for="txtEmal">Email:</label> b<r> 
             <input id="txtEmail" name="email" type="text"> <br> 
 
             <label for="txtAddress">Address:</label> <br> 
             <input id="txtAddress" name="address" type="text"> <br> 
 
-            <label for="txtCreditCard">Credit Card:</label> <br> 
-            <input id="txtCreditCard" name="creditCard" type="text"> <br> 
-
+            
             <label for="txtPassword">Password:</label> <br> 
             <input id="txtPassword" name="password" type="text"> <br> 
 
