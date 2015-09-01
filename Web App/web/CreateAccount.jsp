@@ -12,31 +12,39 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Create Account</h1>
     </body>
-   
-    <h2> Hello World!!</h2> 
-    <h2> Hello World!!</h2> 
-    <h2> Hello World!!</h2> 
-    <h2> Hello World!!</h2> 
-    <h2> Hello World!!</h2> 
-    <h2> Hello World!!</h2> 
-    
-    
-        <form action="/my-handling-form-page" method="post">
-    <div>
-        <label for="name">Name:</label>
-        <input type="text" id="name" />
-    </div>
-    <div>
-        <label for="mail">E-mail:</label>
-        <input type="email" id="mail" />
-    </div>
-    <div>
-        <label for="msg">Message:</label>
-        <textarea id="msg"></textarea>
-    </div>
-            
-</form>
-    
+
+
+    <form action="/CreateAccountServlet" method="post">
+        <fieldset>
+
+            <legend>Enter your details to register</legend>
+
+
+            <label for="txtUsername">Username:</label> <br> 
+            <input id="txtUsername" name="username" type="text"> <br> 
+
+            <label for="txtName">Name:</label> <br> 
+            <input id="txtName" name="name" type="text"> <br> 
+
+            <label for="txtEmal">Email:</label> <br> 
+            <input id="txtEmail" name="email" type="text"> <br> 
+
+            <label for="txtAddress">Address:</label> <br> 
+            <input id="txtAddress" name="address" type="text"> <br> 
+
+            <label for="txtCreditCard">Credit Card:</label> <br> 
+            <input id="txtCreditCard" name="creditCard" type="text"> <br> 
+
+            <label for="txtPassword">Password:</label> <br> 
+            <input id="txtPassword" name="password" type="text"> <br> 
+
+
+            <button type="submit">Submit</button>
+
+        </fieldset>
+
+    </form>
+
 </html>

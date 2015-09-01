@@ -13,7 +13,9 @@ public class Customer {
 
     private String username;
     private String name;
-    private int creditCardDetails;
+    private String email;
+    private String address; 
+    private int creditCard;
     private String password;
 
     public Customer() {
@@ -22,7 +24,7 @@ public class Customer {
     public Customer(String username, String name, int creditCardDetails, String password) {
         this.username = username;
         this.name = name;
-        this.creditCardDetails = creditCardDetails;
+        this.creditCard = creditCardDetails;
         this.password = password;
     }
 
@@ -43,11 +45,11 @@ public class Customer {
     }
 
     public int getCreditCardDetails() {
-        return creditCardDetails;
+        return creditCard;
     }
 
     public void setCreditCardDetails(int creditCardDetails) {
-        this.creditCardDetails = creditCardDetails;
+        this.creditCard = creditCardDetails;
     }
 
     public String getPassword() {
@@ -58,9 +60,31 @@ public class Customer {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" + "username=" + username + ", name=" + name + ", creditCardDetails=" + creditCardDetails + ", password=" + password + '}';
+    public String getEmail() {
+        return email;
     }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public Customer(String username, String name, String email, String address, int creditCardDetails, String password) {
+        this.username = username;
+        this.name = name;
+        this.email = email;
+        this.address = address;
+        this.creditCard = creditCardDetails;
+        this.password = password;
+    }
+    
+    
 
 }// end class
