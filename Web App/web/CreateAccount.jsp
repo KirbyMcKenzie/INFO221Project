@@ -28,7 +28,7 @@
             <label for="txtName">Name:</label> <br> 
             <input id="txtName" name="name" type="text"> <br> 
 
-            <label for="txtEmal">Email:</label> b<r> 
+            <label for="txtEmal">Email:</label> <br> 
             <input id="txtEmail" name="email" type="text"> <br> 
 
             <label for="txtAddress">Address:</label> <br> 

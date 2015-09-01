@@ -6,14 +6,9 @@
 package dao;
 
 import domain.Customer;
-import domain.Product;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 /**
  *
@@ -33,7 +28,7 @@ public class CustomerJdbcDAO implements CustomerDAO {
 
     @Override
     public void saveCustomer(Customer aCustomer) {
-        String sql = "merge into customers (username, name, email, address, password) "
+        String sql = "insert into customers (username, name, email, address, password) "
                 + "values (?,?,?,?,?)";
         try (
                 // get connection to database
@@ -52,9 +47,7 @@ public class CustomerJdbcDAO implements CustomerDAO {
         } catch (SQLException ex) { // we are forced to catch SQLException
 
             // don't let the SQLException leak from our DAO encapsulation
-            throw new DAOException(ex.getMessage(),ex);
+            throw new DAOException(ex.getMessage(), ex);
         }
     }
-    }
-    
 }

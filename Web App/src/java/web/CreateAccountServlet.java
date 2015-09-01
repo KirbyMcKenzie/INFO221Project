@@ -5,8 +5,12 @@
  */
 package web;
 
+import dao.CustomerDAO;
+import dao.CustomerJdbcDAO;
+import domain.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +24,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CreateAccountServlet", urlPatterns = {"/CreateAccountServlet"})
 public class CreateAccountServlet extends HttpServlet {
 
+     //private final SimpleListModel myModel;
+    Customer customer = new Customer();
+
+    private final CustomerDAO dao = new CustomerJdbcDAO();
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -32,32 +40,39 @@ public class CreateAccountServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        String username = request.getParameter("username");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String address = request.getParameter("address");
+        String password = request.getParameter("password");
+
+        customer.setUsername(username);
+        customer.setName(name);
+        customer.setEmail(email);
+        customer.setAddress(address);
+        customer.setPassword(password);
         
-         String username = request.getParameter("username");
-         String name = request.getParameter("name");
-         String email = request.getParameter("email");
-         String address = request.getParameter("address");
-         String password = request.getParameter("password");
-         
+        dao.saveCustomer(customer);
+        
+        response.sendRedirect("/shop/");
+        
+                
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");        
+            out.println("<head>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>CreateAccountServlet </h1>");
-            out.println("<br>" + username + "<br>");
-            out.println(name + "<br>"); 
-            out.println(email + "<br>"); 
-            out.println(address + "<br>");
-            out.println(password + "<br>"); 
-            
+            out.println(customer);
             out.println("</body>");
             out.println("</html>");
         }
     }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -97,5 +112,9 @@ public class CreateAccountServlet extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+    
 
 }
+    
+
+
