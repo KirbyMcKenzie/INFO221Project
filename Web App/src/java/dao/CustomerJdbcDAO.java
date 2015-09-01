@@ -5,6 +5,7 @@
  */
 package dao;
 
+
 import domain.Customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -28,7 +29,7 @@ public class CustomerJdbcDAO implements CustomerDAO {
 
     @Override
     public void saveCustomer(Customer aCustomer) {
-        String sql = "insert into customers (username, name, email, address, password) "
+        String sql = "insert into CUSTOMERS (username, name, email, address, password) "
                 + "values (?,?,?,?,?)";
         try (
                 // get connection to database
