@@ -16,7 +16,7 @@
     </body>
 
 
-    <form action="CreateAccountServlet" method="post">
+    <form action="/shop/CreateAccountServlet" method="post">
         <fieldset>
 
             <legend>Enter your details to register</legend>
@@ -36,7 +36,7 @@
 
             
             <label for="txtPassword">Password:</label> <br> 
-            <input id="txtPassword" name="password" type="text"> <br> 
+            <input id="txtPassword" name="password" type="password"> <br> 
 
 
             <button type="submit">Submit</button>
