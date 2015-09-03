@@ -16,7 +16,7 @@
     </body>
 
 
-    <form action="/shop/CreateAccountServlet" method="post">
+    <form action="CreateAccountServlet" method="post">
         <fieldset>
 
             <legend>Enter your details to register</legend>
