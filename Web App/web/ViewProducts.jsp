@@ -4,6 +4,7 @@
     Author     : kirbymckenzie
 --%>
 
+<%@page import="java.util.Collection"%>
 <%@page import="dao.ProductJdbcDAO"%>
 <%@page import="dao.ProductDAO"%>
 <%@page import="dao.ProductDAO"%>
@@ -21,24 +22,32 @@
     
   ProductDAO dao = new ProductJdbcDAO(); 
   
-  dao.getAll();
+  Collection<Product> product = dao.getAll();
  
-  Product products = new Product(2365,"Productt","description bruh","categories bruh",2.00,1) ;
+  //Product products = new Product(2365,"Productt","description bruh","categories bruh",2.00,1) ;
                       
 %>
 
 <table> 
-    <tr>
+    
+         <% 
+  
+            for (Product products : product) { 
+         
+         %>
             
-         </tr>
-         <% for (Product product : products) {%>
             <tr>
-              <td><%= product.getId()%></td>
-              <td><%= product.getName()%></td>
-              ...
-</tr> <%> } %>
-</table>
+                
+              <td><%= products.getProductID()%></td>
+              <td><%= products.getName()%></td>
+              <td><%= products.getDescription()%></td>
+              
+              
+</tr> 
 
+<% } %>
+
+</table>
 
     </body>
 </html>
