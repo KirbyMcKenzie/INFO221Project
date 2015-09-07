@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
+        
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <h1>Welcome to a generic website</h1>
     </body>

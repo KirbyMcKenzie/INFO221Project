@@ -17,7 +17,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
+        <h1>Product Catalog</h1>
  <%
     
   ProductDAO dao = new ProductJdbcDAO(); 

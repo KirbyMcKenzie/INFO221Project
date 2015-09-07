@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <h1>Create Account</h1>
     </body>
 
