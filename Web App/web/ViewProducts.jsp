@@ -23,8 +23,6 @@
   ProductDAO dao = new ProductJdbcDAO(); 
   
   Collection<Product> product = dao.getAll();
- 
-  //Product products = new Product(2365,"Productt","description bruh","categories bruh",2.00,1) ;
                       
 %>
 
