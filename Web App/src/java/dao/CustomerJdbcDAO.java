@@ -9,11 +9,12 @@ package dao;
 import domain.Customer;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
  *
- * @author kirbymckenzie
+ * @author kirbymckenzie 
  */
 public class CustomerJdbcDAO implements CustomerDAO {
 
@@ -51,4 +52,53 @@ public class CustomerJdbcDAO implements CustomerDAO {
             throw new DAOException(ex.getMessage(), ex);
         }
     }
+    
+
+    @Override
+    public Customer login(String username, String password) {
+       String sql = "SELECT * FROM CUSTOMERS WHERE Username  = ?"
+               + "AND Password = ?";
+        try (
+                // get a connection to the database
+                Connection dbCon = JdbcConnection.getConnection(url);
+                // create the statement
+                PreparedStatement stmt = dbCon.prepareStatement(sql);) {
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            // execute the query
+            
+            ResultSet rs = stmt.executeQuery();
+        
+            
+            // iterate through the query results
+            while (rs.next()) {
+            // get the data out of the query
+                String customerUsername = rs.getString("username");
+                String customerPassword = rs.getString("password");
+                String customerAddress = rs.getString("address");
+                String customerEmail = rs.getString("email");
+                String customerName = rs.getString ("name");
+              
+                
+            // use the data to create a product object
+                Customer cust = new Customer(customerUsername, customerName, customerEmail, 
+                 customerAddress, customerPassword);
+            // and put it in the collection
+                return cust;
+            }
+
+            return null;
+        } catch (SQLException ex) {
+            throw new DAOException(ex.getMessage(),ex);
+
+        }
+
+    }
+
+    
+    
+    
+    
+    
+    
 }

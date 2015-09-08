@@ -1,10 +1,12 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package web;
 
+import dao.CustomerJdbcDAO;
+import domain.Customer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,12 +35,38 @@ public class LogInServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        
+        Customer cust = new CustomerJdbcDAO().login(username, password);
+        // did DAO find a customer with those credentials?
+        if (cust != null) {
+            
+            // if so store the customer in the session
+            HttpSession session = request.getSession();
+            session.setAttribute("customer", cust);
+            System.out.println("Customer login is VALID");
+            
+            
+            // also create and store an Order that will be used as a shopping cart
+            // - session.setAttribute("order", new Order(cust));
+            
+            
+            // go back to home page
+            response.sendRedirect("/shop/ViewProducts.jsp");
+        } else {
+            // where to redirect?
+            response.sendRedirect("/shop/");
+            System.out.println("Customer login is INVALID");
+        }
+
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet LogInServlet</title>");            
+            out.println("<title>Servlet LogInServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet LogInServlet at " + request.getContextPath() + "</h1>");

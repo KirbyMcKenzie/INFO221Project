@@ -16,8 +16,9 @@
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <form action="LogInServlet" method="post">
             <fieldset>
+                <br>
 
-                <legend>Enter your details to log in</legend>
+                <legend>Enter your details to log in bruh</legend>
 
 
                 <label for="txtUsername">Username:</label> <br> 

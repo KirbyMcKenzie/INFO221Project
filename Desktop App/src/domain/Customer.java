@@ -21,12 +21,6 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String username, String name, int creditCardDetails, String password) {
-        this.username = username;
-        this.name = name;
-        this.creditCard = creditCardDetails;
-        this.password = password;
-    }
 
     public String getUsername() {
         return username;
@@ -76,12 +70,11 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer(String username, String name, String email, String address, int creditCardDetails, String password) {
+    public Customer(String username, String name, String email, String address, String password) {
         this.username = username;
         this.name = name;
         this.email = email;
         this.address = address;
-        this.creditCard = creditCardDetails;
         this.password = password;
     }
     
