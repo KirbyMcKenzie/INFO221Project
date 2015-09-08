@@ -46,19 +46,20 @@ public class LogInServlet extends HttpServlet {
             // if so store the customer in the session
             HttpSession session = request.getSession();
             session.setAttribute("customer", cust);
-            System.out.println("Customer login is VALID");
+           
+            
             
             
             // also create and store an Order that will be used as a shopping cart
             // - session.setAttribute("order", new Order(cust));
             
             
-            // go back to home page
+            // view what we got!
             response.sendRedirect("/shop/ViewProducts.jsp");
         } else {
             // where to redirect?
-            response.sendRedirect("/shop/");
-            System.out.println("Customer login is INVALID");
+            response.sendRedirect("/shop/CreateAccount.jsp");
+            
         }
 
         try (PrintWriter out = response.getWriter()) {
