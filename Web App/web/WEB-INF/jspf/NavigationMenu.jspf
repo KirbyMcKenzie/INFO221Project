@@ -3,30 +3,72 @@
 <%@ page pageEncoding="UTF-8" %>
 
 
-<% 
+<%
+
+    Customer cust = (Customer) session.getAttribute("customer");
+    if (cust != null) {%>
+
+
+ 
+  
+<center>
+    
+     Hello, <%=cust.getName()%>
+     <br>
+     
+    <a href="/shop/index.jsp">
+        <button>Home</button>
+    </a>
+
+    <a href="/shop/ViewProducts.jsp">
+        <button>View Products</button>
+    </a>
+
+    <a href="/shop/NoContent.jsp">
+        <button>My Cart</button>
+    </a>
+
+
+
+    <a href="/shop/LogoutServlet">
+        <button>Log Out</button>
+    </a>
+
+</center>
+
+<%} else {%>
+
+<center>
+   
+    <a href="/shop/index.jsp">
+        <button>Home</button>
+    </a>
+
+    <a href="/shop/ViewProducts.jsp">
+        <button>View Products</button>
+    </a>
+
+    <a href="/shop/Login.jsp">
+        <button>My Cart</button>
+    </a>
+    
+
+    <a href="/shop/Login.jsp">
+        <button>Login</button>
+    </a>
+    
+    <br>
+   new user?  <a href= "/shop/CreateAccount.jsp">sign up here</a>
     
     
-Customer cust = (Customer)session.getAttribute("customer");
-if (cust != null){ %>
+   
+</center>
 
-Hello,    <%=cust.getName()%> 
-<a href="/shop/index.jsp">Home</a>
-<a href="/shop/CreateAccount.jsp">Create Account</a>
-<a href="/shop/ViewProducts.jsp">View Products</a> 
-<a href="/shop/LogOutServlet">Log Out</a>
-    
-<%}else{%>
-
-<a href="/shop/index.jsp">Home</a>
-<a href="/shop/CreateAccount.jsp">Create Account</a>
-<a href="/shop/ViewProducts.jsp">View Products</a> 
-<a href="/shop/LogIn.jsp">Log in</a>  
-
-<%} %>
+<%}%>
 
 
 
 
 
-<%-- shopping cart <a href="/shop/ShoppingCart.jsp">Shopping Cart</a> --%>
+<%-- shopping cart link <a href="/shop/ShoppingCart.jsp">Shopping Cart</a> --%>
 

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Sep 7, 2015, 2:59:39 PM
+    Document   : NoContent
+    Created on : Sep 8, 2015, 5:24:18 PM
     Author     : kirbymckenzie
 --%>
 
@@ -9,12 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Time Travel Novelties | Home</title>
+        <title>Time Travel Novelties | My Cart</title>
     </head>
     <body>
-       <center>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
-        <h1>Welcome to Time Travel Novelties</h1>
-        </center>
-    </body>
+    <center>
+        <h1>Sorry, this feature is not yet available</h1>
+
+        <br>
+        Please try again later
+    </center>
+
+</body>
 </html>

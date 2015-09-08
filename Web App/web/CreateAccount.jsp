@@ -9,18 +9,19 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Time Travel Novelties | Create Account</title>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <h1>Create Account</h1>
-    </body>
+        <br>
+    
 
-
+    <center>
     <form action="CreateAccountServlet" method="post">
         <fieldset>
 
-            <legend>Enter your details to register</legend>
+            <legend>Enter your details to Sign up!</legend>
 
 
             <label for="txtUsername">Username:</label> <br> 
@@ -45,5 +46,6 @@
         </fieldset>
 
     </form>
-
+</center>
+    </body>
 </html>

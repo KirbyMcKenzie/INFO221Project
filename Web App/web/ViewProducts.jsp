@@ -14,39 +14,39 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Time Travel Novelties | Products</title>
     </head>
     <body>
+    <center>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
         <h1>Product Catalog</h1>
- <%
-    
-  ProductDAO dao = new ProductJdbcDAO(); 
-  
-  Collection<Product> product = dao.getAll();
-                      
-%>
 
-<table> 
-    
-         <% 
-  
-            for (Product products : product) { 
-         
-         %>
-            
+        <%
+            ProductDAO dao = new ProductJdbcDAO();
+
+            Collection<Product> product = dao.getAll();
+
+        %>
+
+        <table> 
+
+            <%             for (Product products : product) {
+
+            %>
+
             <tr>
-                
-              <td><%= products.getProductID()%></td>
-              <td><%= products.getName()%></td>
-              <td><%= products.getDescription()%></td>
-              
-              
-</tr> 
 
-<% } %>
+                <td><%=products.getCategory()%></td>
+                <td><%= products.getName()%></td>
+                <td><%= products.getDescription()%></td>
+                <td> $<%= products.getPrice()%></td>
 
-</table>
 
-    </body>
+            </tr> 
+
+            <% }%>
+
+        </table>
+    </center>
+</body>
 </html>
