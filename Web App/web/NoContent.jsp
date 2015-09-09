@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Time Travel Novelties | My Cart</title>
+        <title>TimeTravel Novelties | My Cart</title>
     </head>
     <body>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>

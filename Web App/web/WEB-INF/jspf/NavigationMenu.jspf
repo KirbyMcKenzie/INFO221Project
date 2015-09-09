@@ -9,13 +9,13 @@
     if (cust != null) {%>
 
 
- 
-  
+
+
 <center>
-    
-     Hello, <%=cust.getName()%>
-     <br>
-     
+
+    Hello, <%=cust.getName()%>
+    <br>
+
     <a href="/shop/index.jsp">
         <button>Home</button>
     </a>
@@ -39,7 +39,7 @@
 <%} else {%>
 
 <center>
-   
+
     <a href="/shop/index.jsp">
         <button>Home</button>
     </a>
@@ -51,24 +51,18 @@
     <a href="/shop/Login.jsp">
         <button>My Cart</button>
     </a>
-    
+
 
     <a href="/shop/Login.jsp">
         <button>Login</button>
     </a>
-    
+
     <br>
-   new user?  <a href= "/shop/CreateAccount.jsp">sign up here</a>
-    
-    
-   
+    new user?  <a href= "/shop/CreateAccount.jsp">sign up here</a>
+
+
+
 </center>
 
 <%}%>
-
-
-
-
-
-<%-- shopping cart link <a href="/shop/ShoppingCart.jsp">Shopping Cart</a> --%>
 
