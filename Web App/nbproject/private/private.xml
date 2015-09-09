@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/LogIn.jsp</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ViewProducts.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/WEB-INF/jspf/NavigationMenu.jspf</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/CreateAccountServlet.java</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/JdbcConnection.java</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/CustomerJdbcDAO.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/CreateAccount.jsp</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LogInServlet.java</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/CustomerDAO.java</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LogoutServlet.java</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/Login.jsp</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/NoContent.jsp</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LoginServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/index.jsp</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/DAOException.java</file>
         </group>
     </open-files>
 </project-private>
