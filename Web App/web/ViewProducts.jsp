@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css.css">
         <title>TimeTravel Novelties | Products</title>
     </head>
     <body>
@@ -63,6 +64,8 @@
                 <th>Description</th>
                 <th>Price</th>
                 <th>Availability</th>
+                <th>Purchase </th>
+                
             </tr>
         </thead>
         <tbody>
@@ -74,8 +77,13 @@
                 <td><%= products.getDescription()%></td>
                 <td> $<%= products.getPrice()%></td>
                 <td> <%= products.getQuantity()%></td>
-            </tr> 
+                <td><button type="submit" name="buyBtn" value="productID">
+                Add to Cart</button>
+                    <br>
+             
             <% }%>
+            
+            </td>
         </tbody>
     </table>
 </center>

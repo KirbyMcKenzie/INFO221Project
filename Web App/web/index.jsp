@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css.css">
         <title>TimeTravel Novelties | Home</title>
     </head>
 
@@ -21,10 +22,10 @@
 
 
         <img src="http://cdn.gajitz.com/wp-content/uploads/2010/05/vintage-ads-wrist-radio.jpg" 
-             alt="Horse Head Mask" width="265" height="250">
+             alt="Comic" width="265" height="250">
 
         <img src="https://misternizz.files.wordpress.com/2011/07/polaris-nuclear-sub.jpg" 
-             alt="Horse Head Mask" width="265" height="250">
+             alt="Comic" width="265" height="250">
 
 
         <h2>"A ride through the ages"</h2>
@@ -37,7 +38,7 @@
              alt="Bird Head Mask" width="265" height="250">
 
         <img src="http://a.tgcdn.net/images/products/zoom/ec82_horse_head_mask.jpg" 
-             alt="Horse Head Mask" width="260" height="270">
+             alt="Horse Head Mask" width="265" height="250">
 
         <img src="http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=4400139" 
              alt="Deer Head Mask" width="265" height="250">

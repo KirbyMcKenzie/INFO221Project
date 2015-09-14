@@ -22,24 +22,34 @@
         <form action="CreateAccountServlet" method="post">
             <fieldset>
 
-                <legend>Enter your details to Sign up!</legend>
+                <legend> <p>Enter your details to Sign up! </p> </legend>
 
 
-                <label for="txtUsername">Username:</label> <br> 
-                <input id="txtUsername" name="username" type="text"> <br> 
+                
 
-                <label for="txtName">Name:</label> <br> 
-                <input id="txtName" name="name" type="text"> <br> 
+                <label for="txtFirstName"> <p> First Name: </p> </label> 
+                <input id="txtFirstName" name="firstName" type="text"> <br>
+                
+                <label for="txtLastName"> <p>Last Name: </p></label>
+                <input id="txtLastName" name="lastName" type="text"> <br>
 
-                <label for="txtEmal">Email:</label> <br> 
+                <label for="txtEmal"> <p>Email: </p></label>
                 <input id="txtEmail" name="email" type="text"> <br> 
 
-                <label for="txtAddress">Address:</label> <br> 
-                <input id="txtAddress" name="address" type="text"> <br> 
+                <label for="txtStreetAddress"> <p>Street Address: </p> </label>
+                <input id="txtStreetAddress" name="streetAddress" type="text"> <br> 
+                
+                <label for="txtSuburb"> <p>Suburb: </p></label>
+                <input id="txtSuburb" name="suburb" type="text"> <br>
+                
+                
+                <label for="txtUsername"> <p>Username: </p></label>
+                <input id="txtUsername" name="username" type="text"> <br>
 
-
-                <label for="txtPassword">Password:</label> <br> 
-                <input id="txtPassword" name="password" type="password"> <br> 
+                <label for="txtPassword"> <p>Password: </p></label>
+                <input id="txtPassword" name="password" type="password"> <br>
+                
+                <br>
 
 
                 <button type="submit">Submit</button>

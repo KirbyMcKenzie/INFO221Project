@@ -1,20 +1,22 @@
 <%-- any content can be specified here e.g.: --%>
 <%@page import="domain.Customer"%>
+<link rel="stylesheet" type="text/css" href="css.css">
 <%@ page pageEncoding="UTF-8" %>
 
 
 <%
 
     Customer cust = (Customer) session.getAttribute("customer");
-    if (cust != null) {%>
+    if (cust != null) {
+
+%>
 
 
 
 
 <center>
 
-    Hello, <%=cust.getName()%>
-    <br>
+    <p> Hello, <%=cust.getFirstName()%> </p>
 
     <a href="/shop/index.jsp">
         <button>Home</button>
@@ -58,7 +60,7 @@
     </a>
 
     <br>
-    new user?  <a href= "/shop/CreateAccount.jsp">sign up here</a>
+    <p>new user?  <a href= "/shop/CreateAccount.jsp"> sign up here </p></a>
 
 
 

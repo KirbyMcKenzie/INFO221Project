@@ -30,8 +30,9 @@ public class CustomerJdbcDAO implements CustomerDAO {
 
     @Override
     public void saveCustomer(Customer aCustomer) {
-        String sql = "insert into CUSTOMERS (username, name, email, address, password) "
-                + "values (?,?,?,?,?)";
+        String sql = "insert into CUSTOMERS (username, firstName, lastName, email, streetAddress,"
+                + "suburb, password) "
+                + "values (?,?,?,?,?,?,?)";
         try (
                 // get connection to database
                 Connection dbCon = JdbcConnection.getConnection(url);
@@ -40,10 +41,12 @@ public class CustomerJdbcDAO implements CustomerDAO {
 
             // copy the data from the product domain object into the SQL parameters
             stmt.setString(1, aCustomer.getUsername());
-            stmt.setString(2, aCustomer.getName());
-            stmt.setString(3, aCustomer.getEmail());
-            stmt.setString(4, aCustomer.getAddress());
-            stmt.setString(5, aCustomer.getPassword());
+            stmt.setString(2, aCustomer.getFirstName());
+            stmt.setString(3, aCustomer.getLastName());
+            stmt.setString(4, aCustomer.getEmail());
+            stmt.setString(5, aCustomer.getStreetAddress());
+            stmt.setString(6, aCustomer.getSuburb());
+            stmt.setString(7, aCustomer.getPassword());
 
             stmt.executeUpdate(); // execute the statement
         } catch (SQLException ex) { // we are forced to catch SQLException
@@ -73,16 +76,13 @@ public class CustomerJdbcDAO implements CustomerDAO {
             // iterate through the query results
             while (rs.next()) {
             // get the data out of the query
-                String customerUsername = rs.getString("username");
-                String customerPassword = rs.getString("password");
-                String customerAddress = rs.getString("address");
-                String customerEmail = rs.getString("email");
-                String customerName = rs.getString ("name");
+                String custUsername = rs.getString("username");
+                String custPassword = rs.getString("password");
+               String custFirstName = rs.getString("firstName");
               
                 
-            // use the data to create a product object
-                Customer cust = new Customer(customerUsername, customerName, customerEmail, 
-                 customerAddress, customerPassword);
+            // use the data to create a customer object
+                Customer cust = new Customer(custUsername, custPassword,custFirstName);
             // and put it in the collection
                 return cust;
             }
