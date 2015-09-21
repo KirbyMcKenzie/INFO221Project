@@ -13,6 +13,7 @@ public class OrderItem {
 
     private int quantityPurchased;
     private double purchasePrice;
+    private Product product;
 
     public OrderItem() {
     }
@@ -37,6 +38,15 @@ public class OrderItem {
     public void setPurchasePrice(double purchasePrice) {
         this.purchasePrice = purchasePrice;
     }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+    
 
     @Override
     public String toString() {

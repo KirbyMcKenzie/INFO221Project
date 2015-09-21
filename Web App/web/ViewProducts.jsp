@@ -24,7 +24,7 @@
 
 
         <%
-            ProductDAO dao = new ProductJdbcDAO();
+            
             Collection<Product> product;
 
             String categorySelected = request.getParameter("category");

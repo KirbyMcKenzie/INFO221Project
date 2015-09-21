@@ -37,18 +37,17 @@ public class BuyServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
        
          
-         String prodID = request.getParameter("ProductID");
+         String prodID = request.getParameter("productID");
          Integer id = Integer.parseInt(prodID);
          
          Product product = new ProductJdbcDAO().getById(id);
          
          HttpSession session = request.getSession();
             session.setAttribute("product", product);
+            
+            
            
-            
-            
-            
-            
+          
             // also create and store an Order that will be used as a shopping cart
             // - session.setAttribute("order", new Order(cust));
             

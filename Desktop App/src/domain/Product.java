@@ -5,6 +5,7 @@
  */
 package domain;
 
+import java.sql.Blob;
 import net.sf.oval.constraint.Length;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNegative;
@@ -31,6 +32,8 @@ public class Product implements Comparable<Product> {
     private Double price;
    
     private int quantity;
+    
+    private Blob image;
 
     public Product() {
        

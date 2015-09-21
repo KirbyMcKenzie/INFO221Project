@@ -18,6 +18,7 @@ public class Order {
 
     private String orderID;
     private Date date;
+    private Customer customer;
     
     private ArrayList <OrderItem> itemList = new ArrayList();
 
@@ -46,6 +47,16 @@ public class Order {
     public void setDate(Date date) {
         this.date = date;
     }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+    
+    
 
     @Override
     public String toString() {
