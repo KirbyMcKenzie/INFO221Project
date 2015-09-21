@@ -23,7 +23,7 @@
         <br>
         
          <img src="https://cammy-marketing.s3.amazonaws.com/2014/12/1424879935/home-alone-boy.jpg" 
-             alt="NOT FOUND" width="400" height="400">
+             alt="NOT FOUND" width="420" height="400">
         
         
          <br>

@@ -55,6 +55,7 @@
 
     <br>
 
+    <form action ="/shop/BuyServlet" >
     <table border="3">
 
         <thead>
@@ -77,15 +78,18 @@
                 <td><%= products.getDescription()%></td>
                 <td> $<%= products.getPrice()%></td>
                 <td> <%= products.getQuantity()%></td>
-                <td><button type="submit" name="buyBtn" value="productID">
-                Add to Cart</button>
-                    <br>
+                <td> <button type= "submit" name ="productID" value=
+                             "<%= products.getProductID() %>" >View Product </button>
+                
+            
              
             <% }%>
             
             </td>
         </tbody>
     </table>
+    </form>
 </center>
+ 
 </body>
 </html>

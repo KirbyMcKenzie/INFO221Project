@@ -19,7 +19,7 @@
 
             <br>
 
-            <p><%=request.getAttribute("javax.servlet.error.message")%></p>
+            <p><%=request.getAttribute("javax.servlet.error.message") %><br> </p>
 
             <a href="javascript:history.back()">
                 <button>Back</button>

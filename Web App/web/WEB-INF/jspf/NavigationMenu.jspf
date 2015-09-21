@@ -59,7 +59,6 @@
         <button>Login</button>
     </a>
 
-    <br>
     <p>new user?  <a href= "/shop/CreateAccount.jsp"> sign up here </p></a>
 
 

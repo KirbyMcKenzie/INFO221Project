@@ -5,13 +5,16 @@
  */
 package web;
 
+import dao.ProductJdbcDAO;
+import domain.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,19 +35,31 @@ public class BuyServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet BuyServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet BuyServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+       
+         
+         String prodID = request.getParameter("ProductID");
+         Integer id = Integer.parseInt(prodID);
+         
+         Product product = new ProductJdbcDAO().getById(id);
+         
+         HttpSession session = request.getSession();
+            session.setAttribute("product", product);
+           
+            
+            
+            
+            
+            // also create and store an Order that will be used as a shopping cart
+            // - session.setAttribute("order", new Order(cust));
+            
+            
+            // view what we got!
+            response.sendRedirect("/shop/QuantitySelection.jsp");
+            
         }
-    }
+         
+        
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
