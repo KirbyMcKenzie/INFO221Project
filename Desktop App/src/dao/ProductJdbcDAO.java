@@ -48,6 +48,7 @@ public class ProductJdbcDAO implements ProductDAO {
             stmt.setString(4, aProduct.getCategory());
             stmt.setDouble(5, aProduct.getPrice());
             stmt.setInt(6, aProduct.getQuantity());
+           
 
             stmt.executeUpdate(); // execute the statement
         } catch (SQLException ex) { // we are forced to catch SQLException

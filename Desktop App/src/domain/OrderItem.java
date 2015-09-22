@@ -15,13 +15,18 @@ public class OrderItem {
     private double purchasePrice;
     private Product product;
 
+    
+    
     public OrderItem() {
     }
 
-    public OrderItem(int quantityPurchased, double purchasePrice) {
+    public OrderItem(int quantityPurchased, double purchasePrice, Product product) {
         this.quantityPurchased = quantityPurchased;
         this.purchasePrice = purchasePrice;
+        this.product = product;
     }
+
+    
 
     public int getQuantityPurchased() {
         return quantityPurchased;

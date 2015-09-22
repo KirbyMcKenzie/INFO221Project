@@ -19,17 +19,18 @@ public class Order {
     private String orderID;
     private Date date;
     private Customer customer;
-    
     private ArrayList <OrderItem> itemList = new ArrayList();
 
     OrderItem order = new OrderItem();
 
-    public Order() {
+    public Order(Customer customer) {
+        this.customer = customer;
     }
 
-    public Order(String orderID, Date date) {
+    public Order(String orderID, Date date, Customer customer) {
         this.orderID = orderID;
         this.date = date;
+        this.customer = customer;
     }
 
     public String getOrderID() {
@@ -56,8 +57,7 @@ public class Order {
         this.customer = customer;
     }
     
-    
-
+   
     @Override
     public String toString() {
         return "Order{" + "orderID=" + orderID + ", date=" + date + '}';

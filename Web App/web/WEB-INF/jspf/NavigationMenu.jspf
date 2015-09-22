@@ -11,9 +11,6 @@
 
 %>
 
-
-
-
 <center>
 
     <p> Hello, <%=cust.getFirstName()%> </p>
@@ -26,11 +23,9 @@
         <button>View Products</button>
     </a>
 
-    <a href="/shop/NoContent.jsp">
+    <a href="/shop/ShoppingCart.jsp">
         <button>My Cart</button>
     </a>
-
-
 
     <a href="/shop/LogoutServlet">
         <button>Log Out</button>
@@ -49,11 +44,6 @@
     <a href="/shop/ViewProducts.jsp">
         <button>View Products</button>
     </a>
-
-    <a href="/shop/Login.jsp">
-        <button>My Cart</button>
-    </a>
-
 
     <a href="/shop/Login.jsp">
         <button>Login</button>

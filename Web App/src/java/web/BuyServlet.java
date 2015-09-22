@@ -6,6 +6,8 @@
 package web;
 
 import dao.ProductJdbcDAO;
+import domain.Customer;
+import domain.Order;
 import domain.Product;
 import java.io.IOException;
 import java.util.Collection;
@@ -35,21 +37,25 @@ public class BuyServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        
+        
        
-         
+         // get the productID from the ViewProducts page
          String prodID = request.getParameter("productID");
          Integer id = Integer.parseInt(prodID);
          
+         //check the ID against database
          Product product = new ProductJdbcDAO().getById(id);
          
+         //store product in session
          HttpSession session = request.getSession();
             session.setAttribute("product", product);
             
+            Customer cust = (Customer) session.getAttribute("customer");
             
-           
-          
+     
             // also create and store an Order that will be used as a shopping cart
-            // - session.setAttribute("order", new Order(cust));
+             session.setAttribute("order", new Order(cust));
             
             
             // view what we got!

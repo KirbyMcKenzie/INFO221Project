@@ -33,30 +33,30 @@
 
         <p><%= product.getName()%></p>
         <p>Price $<%= product.getPrice()%>NZD</p>
-
-        <br>
         <p> Description:<%= product.getDescription()%></p>
 
+        <br>
+        <br>
 
         <form action="AddToCartServlet" method="post">
-            <fieldset>
 
 
 
-                <legend> <h2>Select your desired quantity</h2> </legend>
 
-                <p> Stock Left: <%= product.getQuantity()%></p>
+            <legend> <h2>Select your desired quantity</h2> </legend>
 
-                <label for="txtQuantity"><p> Quantity: </p> </label> 
-                <input id="txtQuantity" name="quantity" type="text"> 
+            <p> Stock Left: <%= product.getQuantity()%></p>
 
-                <br>
-                <br>
+            <label for="txtQuantity"><p> Quantity: </p> </label> 
+            <input id="txtQuantity" name="quantity" type="text"> 
 
-                <button type="submit"> Add to Cart </button>
+            <br>
+            <br>
+
+            <button type="submit"> Add to Cart </button>
 
 
-            </fieldset>
+
         </form>
 
 

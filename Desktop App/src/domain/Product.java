@@ -87,12 +87,22 @@ public class Product implements Comparable<Product> {
         this.quantity = quantity;
     }
 
+    public Blob getImage() {
+        return image;
+    }
+
+    public void setImage(Blob image) {
+        this.image = image;
+    }
+    
+   
     @Override
     public String toString() {
         return "ID: " + productID + "\t Name: " + name + "\t Category: " + category + 
                 "\t Price " + price + "\t Quantity " + quantity + "\t Description: " + description;
     }
-
+    
+    // product object WITHOUT Image
     public Product(int productID, String name, String description, String category, double price, int quantity) {
         this.productID = productID;
         this.name = name;
@@ -101,6 +111,19 @@ public class Product implements Comparable<Product> {
         this.price = price;
         this.quantity = quantity;
     }
+
+    // product object WITH image
+    public Product(int productID, String name, String description, String category, Double price, int quantity, Blob image) {
+        this.productID = productID;
+        this.name = name;
+        this.description = description;
+        this.category = category;
+        this.price = price;
+        this.quantity = quantity;
+        this.image = image;
+    }
+    
+    
 
     
 

@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
             
             
             // also create and store an Order that will be used as a shopping cart
-            //session.setAttribute("order", new Order(cust));
+            session.setAttribute("order", new Order(cust));
             
             
             // view what we got!
