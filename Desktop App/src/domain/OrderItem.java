@@ -11,9 +11,10 @@ package domain;
  */
 public class OrderItem {
 
-    private int quantityPurchased;
+    private Integer quantityPurchased;
     private double purchasePrice;
     private Product product;
+    private Order order;
 
     
     
@@ -51,6 +52,16 @@ public class OrderItem {
     public void setProduct(Product product) {
         this.product = product;
     }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+    
+    
     
 
     @Override

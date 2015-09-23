@@ -7,9 +7,8 @@
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/BuyServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ErrorPages/GenericErrorPage.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/CreateAccount.jsp</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/OrderDAO.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/Login.jsp</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/css.css</file>
-            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/TermsConditions.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LoginServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/index.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ViewProducts.jsp</file>
@@ -22,6 +21,8 @@
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/AddToCartServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ErrorPages/PageNotFoundError.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/NoContent.jsp</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ShoppingCart.jsp</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/QuantitySelection.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/CustomerDAO.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ErrorPages/InvalidInputError.jsp</file>
         </group>

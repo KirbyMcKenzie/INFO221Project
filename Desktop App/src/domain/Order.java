@@ -16,28 +16,35 @@ public class Order {
     
     
 
-    private String orderID;
+    private Integer orderID;
     private Date date;
     private Customer customer;
     private ArrayList <OrderItem> itemList = new ArrayList();
+    
+    
 
     OrderItem order = new OrderItem();
+
+    public Order() {
+    }
+    
+    
 
     public Order(Customer customer) {
         this.customer = customer;
     }
 
-    public Order(String orderID, Date date, Customer customer) {
+    public Order(Integer orderID, Date date, Customer customer) {
         this.orderID = orderID;
         this.date = date;
         this.customer = customer;
     }
 
-    public String getOrderID() {
+    public Integer getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(String orderID) {
+    public void setOrderID(Integer orderID) {
         this.orderID = orderID;
     }
 
@@ -71,6 +78,11 @@ public class Order {
         itemList.add(orderItem);
         
     }
+    
+    public ArrayList<OrderItem> getItems(){
+        return itemList;
+    }
+    
     
 
 } // end class
