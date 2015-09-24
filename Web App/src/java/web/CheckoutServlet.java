@@ -17,8 +17,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +29,6 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
-import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
@@ -80,7 +77,7 @@ public class CheckoutServlet extends HttpServlet {
 
             // -- CREATE THE REPORT -- 
             
-            
+            /*
             // get a connection to the database
             Connection con = DriverManager
                     .getConnection("jdbc:h2:tcp://localhost/~/project;IFEXISTS=TRUE", "sa", "");
@@ -101,10 +98,9 @@ public class CheckoutServlet extends HttpServlet {
             // clean up
             stmt.close();
             con.close();
-
             // generate the pdf
             JasperExportManager.exportReportToPdfFile(report, "/Users/kirbymckenzie/study/info221/order.pdf/");
-
+            */
             
             /*
              // SEND THE REPORT - NOT FUCKING WORKING >:/
@@ -142,11 +138,11 @@ public class CheckoutServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (EmailException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -164,11 +160,11 @@ public class CheckoutServlet extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (EmailException ex) {
-            Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

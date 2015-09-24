@@ -16,7 +16,6 @@
     <body>
         <h1>ERROR 404: PAGE NOT FOUND</h1>
         
-        <br>
         
         <h2><%=request.getAttribute("javax.servlet.error.message")%> was not found</h2>
         

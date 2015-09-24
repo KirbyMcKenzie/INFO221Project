@@ -6,11 +6,8 @@
 package web;
 
 import dao.ProductJdbcDAO;
-import domain.Customer;
-import domain.Order;
 import domain.Product;
 import java.io.IOException;
-import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,6 +18,7 @@ import javax.servlet.http.HttpSession;
 /**
  *
  * @author kirbymckenzie
+ * 
  */
 @WebServlet(name = "BuyServlet", urlPatterns = {"/BuyServlet"})
 public class BuyServlet extends HttpServlet {

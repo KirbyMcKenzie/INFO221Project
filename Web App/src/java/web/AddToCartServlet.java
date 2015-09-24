@@ -9,16 +9,20 @@ import domain.Order;
 import domain.OrderItem;
 import domain.Product;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import net.sf.oval.ConstraintViolation;
+import net.sf.oval.Validator;
 
 /**
  *
  * @author kirbymckenzie
+ * 
  */
 @WebServlet(name = "AddToCartServlet", urlPatterns = {"/AddToCartServlet"})
 public class AddToCartServlet extends HttpServlet {
@@ -57,12 +61,34 @@ public class AddToCartServlet extends HttpServlet {
          
          //remove product from session
          session.removeAttribute("product");
-        
+
          
-         // to the cart
+         // create Oval validator
+        Validator validator = new Validator();
+
+        // validate the object
+        List<ConstraintViolation> violations = validator.validate(order);
+
+        // were there any violations?
+        if (violations.isEmpty()) {
+            
+            // to the cart
         response.sendRedirect("/shop/ShoppingCart.jsp");
-        
-        
+           
+        } else {
+            // yes, so show constraint messages to user
+            StringBuilder message = new StringBuilder();
+
+            //	loop through the violations extracting the message for each
+            for (ConstraintViolation violation : violations) {
+                message.append(violation.getMessage()).append("\n");
+            }
+
+            // show a message box to the user with all the violation messages
+            response.sendError(422, message.toString());
+
+        }
+ 
         
     } // end processRequest method
 
