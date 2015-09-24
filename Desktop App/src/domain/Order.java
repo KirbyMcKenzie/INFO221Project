@@ -23,7 +23,7 @@ public class Order {
     
     
 
-    OrderItem order = new OrderItem();
+    OrderItem orderItem = new OrderItem();
 
     public Order() {
     }
@@ -64,14 +64,9 @@ public class Order {
         this.customer = customer;
     }
     
-   
-    @Override
-    public String toString() {
-        return "Order{" + "orderID=" + orderID + ", date=" + date + '}';
-    }
 
     public double getTotal() {
-        return order.getItemTotal();
+        return orderItem.getItemTotal();
     }
     
     public void addItem(OrderItem orderItem){
@@ -82,6 +77,13 @@ public class Order {
     public ArrayList<OrderItem> getItems(){
         return itemList;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" + "orderID=" + orderID + ", date=" + date + ", customer=" + customer + '}';
+    }
+    
+    
     
     
 

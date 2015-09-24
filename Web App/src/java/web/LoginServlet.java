@@ -7,9 +7,7 @@ package web;
 
 import dao.CustomerJdbcDAO;
 import domain.Customer;
-import domain.Order;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,42 +37,24 @@ public class LoginServlet extends HttpServlet {
 
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        
+
         Customer cust = new CustomerJdbcDAO().login(username, password);
         // did DAO find a customer with those credentials?
         if (cust != null) {
-            
+
             // if so store the customer in the session
             HttpSession session = request.getSession();
             session.setAttribute("customer", cust);
-           
-            
-            
-            
-            // also create and store an Order that will be used as a shopping cart
-            session.setAttribute("order", new Order(cust));
-            
-            
+
             // view what we got!
             response.sendRedirect("/shop/ViewProducts.jsp");
         } else {
             // where to redirect?
             response.sendRedirect("/shop/Login.jsp");
-            
+
         }
 
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet LoginServlet</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet LoginServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+       
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

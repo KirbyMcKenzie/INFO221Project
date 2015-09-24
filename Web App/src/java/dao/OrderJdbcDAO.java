@@ -24,30 +24,29 @@ public class OrderJdbcDAO implements OrderDAO {
     private String url = "jdbc:h2:tcp://localhost/~/project;IFEXISTS=TRUE";
 
     public OrderJdbcDAO() {
+
     }
 
     public OrderJdbcDAO(String url) {
         this.url = url;
-
     }
 
-    Order order = new Order();
+    
 
-    Timestamp timestamp = new Timestamp(order.getDate().getTime());
+    // get connection to database
     Connection dbCon = JdbcConnection.getConnection(url);
 
     @Override
     public void saveOrder(Order aOrder) {
-        String sql = "insert into SALES (date, customer) values (?,?)";
+        String sql = "insert into SALES (order_date, customer) values (?,?)";
 
         try (
-                // get connection to database
-
                 // create the statement
-                PreparedStatement stmt = dbCon.prepareStatement(sql,
-                        Statement.RETURN_GENERATED_KEYS);) {
+                PreparedStatement stmt = dbCon.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);) {
 
-            // copy the data from the product domain object into the SQL parameters
+            Timestamp timestamp = new Timestamp(aOrder.getDate().getTime());
+
+            // copy the data from the order domain object into the SQL parameters
             stmt.setTimestamp(1, timestamp);
             stmt.setString(2, aOrder.getCustomer().getUsername());
 
@@ -60,10 +59,10 @@ public class OrderJdbcDAO implements OrderDAO {
                 Integer generatedId = rs.getInt(1);
                 // do stuff with ID (omitted)
                 aOrder.setOrderID(generatedId);
-                ArrayList<OrderItem> items = order.getItems();
+                ArrayList<OrderItem> items = aOrder.getItems();
 
                 for (OrderItem item : items) {
-                    item.setOrder(order);
+                    item.setOrder(aOrder);
                     addOrderItem(item, dbCon);
                     updateStockItem(item, dbCon);
                 }
@@ -72,7 +71,6 @@ public class OrderJdbcDAO implements OrderDAO {
 
             }
         } catch (SQLException ex) { // we are forced to catch SQLException
-           
 
             // don't let the SQLException leak from our DAO encapsulation
             throw new DAOException(ex.getMessage(), ex);
@@ -80,16 +78,21 @@ public class OrderJdbcDAO implements OrderDAO {
 
     } // end saveOrder method
 
+    @Override
     public void addOrderItem(OrderItem item, Connection dbCon) throws SQLException {
 
-        String sql2 = "insert into OrderItem (orderid, quantityPurchased, purchasePrice) values (?,?,?)";
+        String sql2 = "insert into OrderItems (product_ID, order_id, quantity_Purchased, price) values (?,?,?,?)";
 
         try (
                 PreparedStatement stmt = dbCon.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);) {
-
-            stmt.setDouble(1, item.getQuantityPurchased());
-            stmt.setDouble(2, item.getPurchasePrice());
-            stmt.setInt(3, item.getOrder().getOrderID());
+            
+            stmt.setInt(1, item.getProduct().getProductID());
+            stmt.setInt(2, item.getOrder().getOrderID());
+            stmt.setDouble(3, item.getQuantityPurchased());
+            stmt.setDouble(4, item.getPurchasePrice());
+            
+            
+            
 
             stmt.executeUpdate();
         }
@@ -98,18 +101,18 @@ public class OrderJdbcDAO implements OrderDAO {
 
     public void updateStockItem(OrderItem item, Connection dbCon) throws SQLException {
 
-        String sql3 = "update product set Quantity=(? - ?} where productID = ?";
+        String sql3 = "update products set Quantity=(? - ?) where ID = ?";
 
         try (
                 PreparedStatement stmt = dbCon.prepareStatement(sql3, Statement.RETURN_GENERATED_KEYS);) {
-            
+
             stmt.setInt(1, item.getProduct().getQuantity());
             stmt.setInt(2, item.getQuantityPurchased());
             stmt.setInt(3, item.getProduct().getProductID());
-            
+
             stmt.executeUpdate();
         }
-            
-        } // end UpdateStockItem method
 
-    } // end OrderJdbcDAO class
+    } // end UpdateStockItem method
+
+} // end OrderJdbcDAO class

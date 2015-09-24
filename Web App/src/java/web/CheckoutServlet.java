@@ -5,9 +5,12 @@
  */
 package web;
 
+import dao.OrderDAO;
+import dao.OrderJdbcDAO;
 import domain.Customer;
+import domain.Order;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +25,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "CheckoutServlet", urlPatterns = {"/CheckoutServlet"})
 public class CheckoutServlet extends HttpServlet {
 
+    private final OrderDAO dao = new OrderJdbcDAO();
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,31 +39,36 @@ public class CheckoutServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-     
-        
+
         HttpSession session = request.getSession();
-        
-         Customer cust = (Customer) session.getAttribute("customer");
-         
-         
-    if (cust != null) {
-        // then do the checkout shit
-        
-        
-    
-    
-    
-    }else{
-    
-    // where to redirect?
+        Customer cust = (Customer) session.getAttribute("customer");
+
+        if (cust != null) {
+            // then do the checkout shit
+
+            Date currentDate = new Date();
+
+            // set date and customer to order session
+            Order order = (Order) session.getAttribute("order");
+
+            order.setDate(currentDate);
+            order.setCustomer(cust);
+
+            session.setAttribute("order", order);
+
+            System.out.println(order);
+
+            dao.saveOrder(order);
+
+            response.sendRedirect("/shop/Checkout.jsp");
+
+        } else {
+
+            // where to redirect?
             response.sendRedirect("/shop/Login.jsp");
-            
-}
+
+        }
     } // end processRequest method
-    
-    
-    
-    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

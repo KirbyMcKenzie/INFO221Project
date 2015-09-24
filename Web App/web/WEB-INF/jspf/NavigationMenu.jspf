@@ -1,4 +1,5 @@
 <%-- any content can be specified here e.g.: --%>
+<%@page import="domain.Order"%>
 <%@page import="domain.Customer"%>
 <link rel="stylesheet" type="text/css" href="css.css">
 <%@ page pageEncoding="UTF-8" %>
@@ -7,6 +8,14 @@
 <%
 
     Customer cust = (Customer) session.getAttribute("customer");
+    
+    Order order = (Order) session.getAttribute("order");
+    
+    if (order == null){
+        order = new Order();
+        session.setAttribute("order", order);
+    }
+    
     if (cust != null) {
 
 %>
@@ -43,6 +52,10 @@
 
     <a href="/shop/ViewProducts.jsp">
         <button>View Products</button>
+    </a>
+    
+    <a href="/shop/ShoppingCart.jsp">
+        <button>My Cart</button>
     </a>
 
     <a href="/shop/Login.jsp">

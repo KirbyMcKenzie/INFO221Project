@@ -5,13 +5,10 @@
  */
 package web;
 
-import dao.ProductJdbcDAO;
-import domain.Customer;
 import domain.Order;
 import domain.OrderItem;
 import domain.Product;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -56,6 +53,12 @@ public class AddToCartServlet extends HttpServlet {
          
          // add item to order object
          order.addItem(orderItem);
+         
+         
+         //remove product from session
+         
+         session.removeAttribute("product");
+        
          
          
         response.sendRedirect("/shop/ShoppingCart.jsp");

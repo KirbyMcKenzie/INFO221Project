@@ -50,13 +50,7 @@ public class BuyServlet extends HttpServlet {
          //store product in session
          HttpSession session = request.getSession();
             session.setAttribute("product", product);
-            
-            Customer cust = (Customer) session.getAttribute("customer");
-            
-     
-            // also create and store an Order that will be used as a shopping cart
-             session.setAttribute("order", new Order(cust));
-            
+           
             
             // view what we got!
             response.sendRedirect("/shop/QuantitySelection.jsp");

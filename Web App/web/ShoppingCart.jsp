@@ -4,6 +4,8 @@
     Author     : kirbymckenzie
 --%>
 
+<%@page import="domain.OrderItem"%>
+<%@page import="java.util.ArrayList"%>
 <%@page import="domain.Order"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -16,17 +18,51 @@
     </head>
     <body>
     <center>
-        <h1>Shopping Cart</h1>
-        
+        <h1> Shopping Cart </h1>
+
         <%
-        
-        Order order = (Order) session.getAttribute("order");
-                
-                
-                %>
-        
-        
-        
-    </center>
-    </body>
+            Order cart = (Order) session.getAttribute("order");
+
+            ArrayList<OrderItem> orderlist = cart.getItems();
+
+
+        %>
+
+        <table border="3">
+
+
+
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <% for (OrderItem orders : orderlist) {%>
+                <tr>
+
+                    <td><%= orders.getProduct().getName()%></td>
+                    <td><%= orders.getPurchasePrice()%></td>
+                    <td><%= orders.getQuantityPurchased()%></td>
+                    <td><%= orders.getItemTotal()%></td>
+
+                    <% }%>
+
+                    </td>
+            </tbody>
+        </table>
+    </form>
+    
+    <a href="/shop/CheckoutServlet">
+        <button>Checkout Order</button>
+    </a>
+    
+</center>
+</body>
 </html>
