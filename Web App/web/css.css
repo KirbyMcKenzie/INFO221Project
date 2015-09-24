@@ -13,31 +13,49 @@ body {
 }
 
 h1 {
-    color: white;
+    color: gold;
     font-family: "Trebuchet MS", Helvetica, sans-serif
+    
    
 }
 
+h1{
+    font-size: 56px;
+    
+}
+
+
 h2{
-    color: white;
+    color: gold;
     font-family: "Trebuchet MS", Helvetica, sans-serif
     
 }
 
+h2{
+    font-size: 32px;
+    
+}
+
+
 h3{
-    color: white;
+    color: gold;
     font-family: "Trebuchet MS", Helvetica, sans-serif
 }
 
+h3{
+    font-size: 26px;
+    
+}
+
 p{
-    color: white;
+    color: gold;
      font-family: "Trebuchet MS", Helvetica, sans-serif
      
 }
 
 table, th, td{
    
-     color: white;
+     color: gold;
      font-family: "Trebuchet MS", Helvetica, sans-serif
    
 }
@@ -54,5 +72,8 @@ color:activeborder
 
 a{
     
-    color: white;
+    color: #C0C0C0;
 }
+
+a:hover {color: #C0C0C0; text-decoration: none}
+

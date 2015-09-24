@@ -7,14 +7,15 @@
 <%@page import="domain.OrderItem"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="domain.Order"%>
+<%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
+        
         <link rel="stylesheet" type="text/css" href="css.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>TimeTravel Novelties | Cart</title>
+        <title>Disguised.com | for all your fraudulent needs | Cart</title>
     </head>
     <body>
     <center>
@@ -59,10 +60,12 @@
         </table>
     </form>
     
+    <br>
+
     <a href="/shop/CheckoutServlet">
         <button>Checkout Order</button>
     </a>
-    
+
 </center>
 </body>
 </html>

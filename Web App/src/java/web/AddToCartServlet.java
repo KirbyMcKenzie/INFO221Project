@@ -56,11 +56,10 @@ public class AddToCartServlet extends HttpServlet {
          
          
          //remove product from session
-         
          session.removeAttribute("product");
         
          
-         
+         // to the cart
         response.sendRedirect("/shop/ShoppingCart.jsp");
         
         

@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css.css">
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
-        <title>TimeTravel Novelties | Select Quantity</title>
+        <title>Disguised.com | for all your fraudulent needs | Select Quantity</title>
     </head>
     <body>
     <center>

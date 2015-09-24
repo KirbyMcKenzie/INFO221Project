@@ -10,34 +10,35 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css.css">
-        <title>TimeTravel Novelties | Home</title>
+        <title>Disguised.com | for all your fraudulent needs | Home</title>
     </head>
 
     <center>
         <%@include file="/WEB-INF/jspf/NavigationMenu.jspf" %>
-        <h1>Welcome to TimeTravel Novelties</h1>
-        
-        <img src="lavalamp.gif" alt="Lava Lamps" style="width:600px;height:550px;">
-
+        <h1>Welcome to Disguised.</h1>
         
 
-
-        <h2>"A ride through the ages"</h2>
-        <h2> We sell a collection of well-known novelty items from around the world </h2>
-
+        <h2>For All Your Fraudulent Needs </h2>
+       
+        
         <br>
--
         
-        <img src="http://www.mrdankelly.com/martialadimages/1975HerculesUnbound.jpg" 
-             alt="Kung Fu classes" width="265" height="250">
+        <img src="http://media.giphy.com/media/5u0uZecUZlUsM/giphy.gif" 
+             alt="Money" width="300" height="300">
 
 
-        <img src="http://cdn.gajitz.com/wp-content/uploads/2010/05/vintage-ads-wrist-radio.jpg" 
-             alt="Comic" width="265" height="250">
+        <img src="http://cdn.ientry.com/sites/webpronews/pictures/disguise_320x245.jpg" 
+             alt="Admin" width="300" height="300">
 
-        <img src="https://misternizz.files.wordpress.com/2011/07/polaris-nuclear-sub.jpg" 
-             alt="Comic" width="265" height="250">
-
+        <img src="http://media.giphy.com/media/5u0uZecUZlUsM/giphy.gif" 
+             alt="Money" width="300" height="300">
+        
+        <br>
+        <br>
+        
+        <h3>Please login to use our... services</h3>
+        
+         
         
 
 

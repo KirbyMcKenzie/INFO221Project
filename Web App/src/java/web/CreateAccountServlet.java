@@ -26,7 +26,6 @@ import net.sf.oval.Validator;
 @WebServlet(name = "CreateAccountServlet", urlPatterns = {"/CreateAccountServlet"})
 public class CreateAccountServlet extends HttpServlet {
 
-     //private final SimpleListModel myModel;
     Customer customer = new Customer();
 
     private final CustomerDAO dao = new CustomerJdbcDAO();

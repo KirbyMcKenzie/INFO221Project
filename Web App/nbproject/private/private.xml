@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="3">
+        <file>
+            <url>src/java/dao/OrderJdbcDAO.java</url>
+            <bookmark id="3">
+                <name/>
+                <line>101</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/BuyServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ErrorPages/GenericErrorPage.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/CreateAccount.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/OrderDAO.java</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/css.css</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LoginServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/OrderJdbcDAO.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/CreateAccountServlet.java</file>
@@ -14,6 +24,7 @@
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/CustomerJdbcDAO.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/LogoutServlet.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/AddToCartServlet.java</file>
+            <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/Background.jpg</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/web/ErrorPages/InvalidInputError.jsp</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/dao/DAOException.java</file>
             <file>file:/Users/kirbymckenzie/Study/INFO221/project/Web%20App/src/java/web/CheckoutServlet.java</file>

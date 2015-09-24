@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css.css">
-        <title>TimeTravel Novelties | Product Catalog</title>
+        <title>Disguised.com | for all your fraudulent needs | Product Catalog</title>
     </head>
     <body>
     <center>
@@ -60,7 +60,6 @@
 
         <thead>
             <tr>
-                <th>Category</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Price</th>
@@ -73,13 +72,13 @@
             <% for (Product products : product) {%>
             <tr>
 
-                <td><%= products.getCategory()%></td>
                 <td><%= products.getName()%></td>
                 <td><%= products.getDescription()%></td>
                 <td> $<%= products.getPrice()%></td>
                 <td> <%= products.getQuantity()%></td>
                 <td> <button type= "submit" name ="productID" value=
                              "<%= products.getProductID() %>" >View Product </button>
+                
                 
             
              

@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="css.css">
-        <title>TimeTravel Novelties | Login </title>
+        <title>Disguised.com | for all your fraudulent needs | Login </title>
     </head>
 
     <body>
