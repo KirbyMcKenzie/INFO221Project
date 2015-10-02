@@ -44,6 +44,7 @@ public class CreateAccountServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        
         String username = request.getParameter("username");
         String name = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
@@ -52,6 +53,7 @@ public class CreateAccountServlet extends HttpServlet {
         String suburb = request.getParameter("suburb");
         String password = request.getParameter("password");
 
+    
         customer.setUsername(username);
         customer.setFirstName(name);
         customer.setLastName(lastName);
@@ -90,9 +92,8 @@ public class CreateAccountServlet extends HttpServlet {
 
         HttpSession session = request.getSession();
             session.setAttribute("customer", customer);
-            
-       
     }
+    
         
     
 

@@ -29,9 +29,6 @@ import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JasperViewer;
-import org.apache.commons.mail.Email;
-import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.SimpleEmail;
 
 /**
  *
@@ -50,9 +47,11 @@ public class CheckoutServlet extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
+     * @throws java.sql.SQLException
+     * @throws net.sf.jasperreports.engine.JRException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException, JRException, EmailException {
+            throws ServletException, IOException, SQLException, JRException {
         response.setContentType("text/html;charset=UTF-8");
         
         // get customer from session
@@ -76,43 +75,29 @@ public class CheckoutServlet extends HttpServlet {
             response.sendRedirect("/shop/Checkout.jsp");
 
             // -- CREATE THE REPORT -- 
-            
-            /*
-            // get a connection to the database
-            Connection con = DriverManager
-                    .getConnection("jdbc:h2:tcp://localhost/~/project;IFEXISTS=TRUE", "sa", "");
-
+            JasperPrint report;
             // select from the view
-            String sql = "select * from ORDERITEMS";
-
-            // execute the statement
-            PreparedStatement stmt = con.prepareStatement(sql);
-            ResultSet rs = stmt.executeQuery();
-
-            // create the report using the result set as a data source
-            JasperPrint report
-                    = JasperFillManager.fillReport("/Users/kirbymckenzie/study/info221/orders.jasper/",
+            try ( // get a connection to the database
+                    Connection con = DriverManager
+                            .getConnection("jdbc:h2:tcp://localhost/~/project;IFEXISTS=TRUE", "sa", "")) {
+                // select from the view
+                
+                String sql = "select * from ORDERITEMS";
+                
+                
+                try ( // execute the statement
+                        PreparedStatement stmt = con.prepareStatement(sql)) {
+                    ResultSet rs = stmt.executeQuery();
+                    // create the report using the result set as a data source
+                    report = JasperFillManager.fillReport("/Users/kirbymckenzie/study/info221/orders.jasper/",
                             new HashMap<String, Object>(), new JRResultSetDataSource(rs)); // display the report
-            JasperViewer.viewReport(report);
-
-            // clean up
-            stmt.close();
-            con.close();
+                    JasperViewer.viewReport(report);
+                    // clean up
+                }
+            }
             // generate the pdf
             JasperExportManager.exportReportToPdfFile(report, "/Users/kirbymckenzie/study/info221/order.pdf/");
-            */
-            
-            /*
-             // SEND THE REPORT - NOT FUCKING WORKING >:/
-             Email email = new SimpleEmail();
-             email.setHostName("localhost");
-             email.setSmtpPort(2525);
-             email.setFrom("disguised@unkown.sa");
-             email.setSubject("Hey man");
-             email.setMsg("Sup bruv");
-             email.addTo("kirby.mckenzie@hotmail.com");
-             email.send();
-             */
+               
             
             
         } else {
@@ -141,7 +126,7 @@ public class CheckoutServlet extends HttpServlet {
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (EmailException ex) {
+
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -163,7 +148,6 @@ public class CheckoutServlet extends HttpServlet {
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (JRException ex) {
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (EmailException ex) {
             //Logger.getLogger(CheckoutServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

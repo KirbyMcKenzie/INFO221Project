@@ -1,4 +1,4 @@
-<%-- 
+1<%-- 
     Document   : ViewProducts
     Created on : Sep 2, 2015, 7:39:44 PM
     Author     : kirbymckenzie
@@ -79,7 +79,7 @@
                 <td> <button type= "submit" name ="productID" value=
                              "<%= products.getProductID() %>" >View Product </button>
                 
-                
+                <button 
             
              
             <% }%>
